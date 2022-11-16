@@ -1,2 +1,2 @@
 FROM nginx
-RUN mkdir /var/www && git clone https://github.com/moodle/moodle.git /var/www/html
+RUN mkdir /var/www && git clone -b MOODLE_400_STABLE https://github.com/moodle/moodle.git /var/www/html
