@@ -1,2 +1,3 @@
 FROM nginx
-RUN mkdir /var/www && git clone -b MOODLE_400_STABLE https://github.com/moodle/moodle.git /var/www/html
+RUN apt update && apt install unzip
+RUN mkdir /var/www && cd /var/www &&  curl -LON https://github.com/moodle/moodle/archive/refs/heads/MOODLE_400_STABLE.zip && unzip MOODLE_400_STABLE.zip && mv moodle-MOODLE_400_STABLE html && rm MOODLE_400_STABLE.zip
